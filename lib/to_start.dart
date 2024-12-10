@@ -47,37 +47,39 @@ class HowToStart extends StatelessWidget {
           style: TextStyle(color: Colors.white),
         ),
         const SizedBox(height: 20),
-        Wrap(
-          spacing: 20,
-          runSpacing: 20,
-          children: toStart
-              .map(
-                (start) => SizedBox(
-                height: 150,
-                width: 250,
-                child: Card(
-                  color: Colors.grey,
-                  child: Padding(
-                    padding: const EdgeInsets.only(
-                        left: 20, top: 25, right: 20, bottom: 25),
-                    child: Column(
-                      crossAxisAlignment:
-                      CrossAxisAlignment.start,
-                      children: [
-                        Text(start.title,
-                            style: const TextStyle(
-                                fontSize: 15,
-                                fontWeight: FontWeight.w700)),
-                        const SizedBox(
-                          height: 10,
-                        ),
-                        Text(start.text)
-                      ],
+        Center(
+          child: Wrap(
+            spacing: 20,
+            runSpacing: 20,
+            children: toStart
+                .map(
+                  (start) => SizedBox(
+                  height: 150,
+                  width: 250,
+                  child: Card(
+                    color: Colors.grey,
+                    child: Padding(
+                      padding: const EdgeInsets.only(
+                          left: 20, top: 25, right: 20, bottom: 25),
+                      child: Column(
+                        crossAxisAlignment:
+                        CrossAxisAlignment.start,
+                        children: [
+                          Text(start.title,
+                              style: const TextStyle(
+                                  fontSize: 15,
+                                  fontWeight: FontWeight.w700)),
+                          const SizedBox(
+                            height: 10,
+                          ),
+                          Text(start.text)
+                        ],
+                      ),
                     ),
-                  ),
-                )),
-          )
-              .toList(),
+                  )),
+            )
+                .toList(),
+          ),
         ),
       ],
     );

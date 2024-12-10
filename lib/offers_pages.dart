@@ -1,16 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:marquee/marquee.dart';
 
-final List<String> offers = [
-  "BEGINNERS FRIENDLY",
-  "24/7 SERVICE",
-  "20+TRAINERS",
-  "LIVE CONSULTANCY",
-  "20+TRAINERS",
-];
-
 class OffersPages extends StatelessWidget {
-  const OffersPages({super.key});
+   OffersPages({super.key});
+
+  final List<String> offers = [
+    "BEGINNERS FRIENDLY",
+    "24/7 SERVICE",
+    "20+TRAINERS",
+    "LIVE CONSULTANCY",
+    "20+TRAINERS",
+  ];
 
   @override
   Widget build(BuildContext context) {

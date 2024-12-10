@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:web_project_c/services.dart';
 import 'package:web_project_c/to_start.dart';
 
 import 'featured_page.dart';
@@ -19,23 +20,27 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            const OffersPages(),
+             OffersPages(),
             Container(
               padding: const EdgeInsets.only(left: 50),
-              child: Column(
+              child: const Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const SizedBox(
+                  SizedBox(
                     height: 60,
                   ),
-                  const FeaturedPage(),
-                  const SizedBox(
+                  FeaturedPage(),
+                  SizedBox(
                     height: 60,
                   ),
                   HowToStart(),
                 ],
               ),
             ),
+            const SizedBox(
+              height: 60,
+            ),
+            const Services(),
           ],
         ),
       ),
