@@ -25,8 +25,7 @@ class OffersPages extends StatelessWidget {
               color: Colors.lightGreen,
                 height: 50,
                 width: double.infinity,
-                child: Marquee(
-                  text: offers[index],
+                child: Marquee(text:offers[index],
                   style: const TextStyle(color: Colors.white),
                 ));
           }),

@@ -73,7 +73,7 @@ class _MainImageState extends State<MainImage> {
               ),
             ],
           )
-        : Image.asset('assets/images/mainImagePhone.png',
+        : Image.asset('assets/images/mainImage.jpg',
             width: double.infinity);
   }
 }

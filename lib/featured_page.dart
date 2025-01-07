@@ -29,9 +29,11 @@ class FeaturedPage extends StatelessWidget {
                 padding: const EdgeInsets.only(left: 10,right: 10),
                 itemCount: featured.length,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.only(left: 10,right: 10),
-                    child: Text(featured[index],style: const TextStyle(color: Colors.white),),
+                  return Center(
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 10,right: 10),
+                      child: Text(featured[index],style: const TextStyle(color: Colors.white),),
+                    ),
                   );
                 }),
           ),

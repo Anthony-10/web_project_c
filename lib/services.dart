@@ -53,7 +53,7 @@ class _ServicesState extends State<Services> {
                 Padding(
                   padding: const EdgeInsets.only(right: 30),
                   child: Image.asset(
-                    "assets/images/image5.jpg",
+                    "assets/images/gymPhotos.jpg",
                     height: 500,
                     width: 500,
                   ),
@@ -70,7 +70,7 @@ class _ServicesState extends State<Services> {
                 Padding(
                   padding: const EdgeInsets.only(right: 30),
                   child: Image.asset(
-                    "assets/images/image5.jpg",
+                    "assets/images/gymPhotos1.jpg",
                     height: 500,
                     width: 500,
                   ),
