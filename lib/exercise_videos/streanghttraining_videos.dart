@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
 
+import '../models/image.dart';
 import '../models/videos.dart';
 
 class StrengthTrainingVideos extends StatefulWidget {
@@ -16,27 +17,35 @@ class _StrengthTrainingVideosState extends State<StrengthTrainingVideos> {
 
   var assetsImage = [
     "assets/videos/cardio.mp4",
-    "assets/videos/strengthTraining.mp4",
-    "assets/videos/zumba.mp4"
+    "assets/videos/overheadPress.mp4",
+    "assets/videos/bench-press.mp4"
   ].obs;
 
   final List<ToImage> toImage = [
     ToImage(
       title: 'assets/images/dumbbell-bench-press_0.jpg',
+      video: "assets/videos/cardio.mp4",
     ),
     ToImage(
       title: 'assets/images/dumbbell-goblet-squat-1.jpg',
+      video: "assets/videos/overheadPress.mp4",
     ),
     ToImage(
       title: 'assets/images/dumbbell-lateral-raise.jpg',
+      video: "assets/videos/bench-press.mp4"
     ),
-    ToImage(
-      title: 'assets/images/dumbbell-pullover.jpg',
-    ),
-    ToImage(
-      title: 'assets/images/military-overhead-press.jpg',
-    ),
+  ];
 
+  final List<ToVideo> toVideo = [
+    ToVideo(
+      title: "assets/videos/cardio.mp4",
+    ),
+    ToVideo(
+      title: "assets/videos/overheadPress.mp4",
+    ),
+    ToVideo(
+      title: "assets/videos/bench-press.mp4"
+    ),
   ];
 
   List items = [
@@ -47,13 +56,13 @@ class _StrengthTrainingVideosState extends State<StrengthTrainingVideos> {
 
   bool isVisible = false;
 
-  var image = "assets/videos/cardio.mp4";
+  var image = "assets/videos/cardio.mp4".obs;
 
   void _playVideo() {
-    videoPlayerController = VideoPlayerController.asset(image)
+    videoPlayerController = VideoPlayerController.asset(image.value)
       ..addListener(() => setState(() {}))
       ..setLooping(true)
-      ..initialize().then((value) => videoPlayerController.pause());
+      ..initialize().then((value) => videoPlayerController.play());
   }
 
   @override
@@ -118,6 +127,15 @@ class _StrengthTrainingVideosState extends State<StrengthTrainingVideos> {
                     width: 250,
                     child: InkWell(
                         onTap: () {
+                          setState(() {
+                            print("${start.video}yyyyyyyyyyyyyyyyyyyy");
+                            print("${image}kkkkkkkkkkkkkkkkkkkkkk");
+                            image.value = start.video;
+                            _playVideo();
+                          });
+
+                          print("${image}ppppppppppppppppppppp");
+                          /*print('${start.title.indexOf(s)}fffffffffffffffffffffffff');*/
                           showDialog(
                               context: context,
                               builder: (BuildContext context) {

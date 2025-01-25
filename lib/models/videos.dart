@@ -1,7 +1,7 @@
-class ToImage {
+class ToVideo {
   final String title;
 
-  ToImage({
+  ToVideo({
     required this.title,
 
   });

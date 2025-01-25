@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
 
+import '../models/image.dart';
 import '../models/videos.dart';
 
 class HomeWorkoutVideos extends StatefulWidget {
@@ -22,13 +23,16 @@ class _HomeWorkoutVideosState extends State<HomeWorkoutVideos> {
 
   final List<ToImage> toImage = [
     ToImage(
-      title: 'assets/images/mainImage.jpg',
+      title: 'assets/images/dumbbell-bench-press_0.jpg',
+      video: "assets/videos/cardio.mp4",
     ),
     ToImage(
-      title: 'assets/images/mainImage.jpg',
+      title: 'assets/images/dumbbell-goblet-squat-1.jpg',
+      video: "assets/videos/overheadPress.mp4",
     ),
     ToImage(
-      title: 'assets/images/mainImage.jpg',
+        title: 'assets/images/dumbbell-lateral-raise.jpg',
+        video: "assets/videos/bench-press.mp4"
     ),
   ];
 
@@ -40,13 +44,13 @@ class _HomeWorkoutVideosState extends State<HomeWorkoutVideos> {
 
   bool isVisible = false;
 
-  var image = "assets/videos/cardio.mp4";
+  var image = "assets/videos/cardio.mp4".obs;
 
   void _playVideo() {
-    videoPlayerController = VideoPlayerController.asset(image)
+    videoPlayerController = VideoPlayerController.asset(image.value)
       ..addListener(() => setState(() {}))
       ..setLooping(true)
-      ..initialize().then((value) => videoPlayerController.pause());
+      ..initialize().then((value) => videoPlayerController.play());
   }
 
   @override
@@ -111,6 +115,8 @@ class _HomeWorkoutVideosState extends State<HomeWorkoutVideos> {
                         width: 250,
                         child: InkWell(
                             onTap: () {
+                              image.value = start.video;
+                              _playVideo();
                               showDialog(
                                   context: context,
                                   builder: (BuildContext conttext) {
