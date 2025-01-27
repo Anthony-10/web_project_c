@@ -1,11 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:web_project_c/exercise_video_page.dart';
-import 'package:web_project_c/player_screen1.dart';
-import 'package:web_project_c/youtube_player.dart';
 import 'package:web_project_c/services.dart';
 import 'package:web_project_c/to_start.dart';
-import 'package:web_project_c/youtube_vedios.dart';
 
+import 'exercise_videos/burncalories_videos.dart';
 import 'exercise_videos/homeworkout_videos.dart';
 import 'exercise_videos/streanghttraining_videos.dart';
 import 'featured_page.dart';
@@ -55,6 +52,10 @@ class HomePage extends StatelessWidget {
               height: 5,
             ),
             const StrengthTrainingVideos(),
+            const SizedBox(
+              height: 5,
+            ),
+            const BurnCaloriesVideos()
           ],
         ),
       ),
