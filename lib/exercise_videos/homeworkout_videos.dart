@@ -3,7 +3,6 @@ import 'package:get/get.dart';
 import 'package:video_player/video_player.dart';
 
 import '../models/image.dart';
-import '../models/videos.dart';
 
 class HomeWorkoutVideos extends StatefulWidget {
   const HomeWorkoutVideos({super.key});
@@ -104,100 +103,46 @@ class _HomeWorkoutVideosState extends State<HomeWorkoutVideos> {
         ),
         Visibility(
           visible: isVisible,
-          child: Center(
-            child: Wrap(
-              spacing: 20,
-              runSpacing: 20,
-              children: toImage
-                  .map(
-                    (start) => SizedBox(
-                        height: 150,
-                        width: 250,
-                        child: InkWell(
-                            onTap: () {
-                              image.value = start.video;
-                              _playVideo();
-                              showDialog(
-                                  context: context,
-                                  builder: (BuildContext conttext) {
-                                    return Dialog.fullscreen(
-                                      child: Column(
-                                        crossAxisAlignment:
-                                            CrossAxisAlignment.center,
-                                        children: [
-                                          AspectRatio(
-                                            aspectRatio: 16 / 9,
-                                            child: VideoPlayer(
-                                              videoPlayerController,
+          child: Padding(
+            padding: const EdgeInsets.only(top: 20,bottom: 20),
+            child: Center(
+              child: Wrap(
+                spacing: 20,
+                runSpacing: 20,
+                children: toImage
+                    .map(
+                      (start) => SizedBox(
+                          height: 150,
+                          width: 250,
+                          child: InkWell(
+                              onTap: () {
+                                image.value = start.video;
+                                _playVideo();
+                                showDialog(
+                                    context: context,
+                                    builder: (BuildContext conttext) {
+                                      return Dialog.fullscreen(
+                                        child: Container(
+                                          color:Colors.black,
+                                          child: Center(
+                                            child: AspectRatio(
+                                              aspectRatio: 16 / 9,
+                                              child: VideoPlayer(
+                                                videoPlayerController,
+                                              ),
                                             ),
                                           ),
-                                          IconButton(
-                                            onPressed: () =>
-                                                videoPlayerController
-                                                        .value.isPlaying
-                                                    ? videoPlayerController
-                                                        .pause()
-                                                    : videoPlayerController
-                                                        .play(),
-                                            icon: Icon(
-                                              videoPlayerController
-                                                      .value.isPlaying
-                                                  ? Icons.pause
-                                                  : Icons.play_arrow,
-                                              color: Colors.black,
-                                              size: 40,
-                                            ),
-                                          ),
-                                        ],
-                                      ),
-                                    );
-                                  });
-                            },
-                            child: Image.asset(height: 100,
-                                width: 50,start.title))),
-                  )
-                  .toList(),
+                                        ),
+                                      );
+                                    });
+                              },
+                              child: Image.asset(height: 100,
+                                  width: 50,start.title))),
+                    )
+                    .toList(),
+              ),
             ),
           ),
-
-          /* SizedBox(
-            height: 100,
-            width: double.infinity,
-            child: ListView.builder(
-              itemCount: toImage.length,
-              itemBuilder: (BuildContext context, int index) {
-                return InkWell(
-                    onTap: () {
-                      Dialog.fullscreen(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          children: [
-                            AspectRatio(
-                              aspectRatio: 16 / 9,
-                              child: VideoPlayer(
-                                videoPlayerController,
-                              ),
-                            ),
-                            IconButton(
-                              onPressed: () =>
-                                  videoPlayerController.value.isPlaying
-                                      ? videoPlayerController.pause()
-                                      : videoPlayerController.play(),
-                              icon: Icon(
-                                videoPlayerController.value.isPlaying
-                                    ? Icons.pause
-                                    : Icons.play_arrow,
-                                color: Colors.black,
-                                size: 40,
-                              ),
-                            ),
-                          ],
-                        ),
-                      );
-                    },
-                    child: Image.asset(items[index]));
-              }, */
-          /*child: YoutubePlayer(controller: playerController)*/ /*),),*/
         )
       ],
     );
