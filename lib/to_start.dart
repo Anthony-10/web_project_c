@@ -57,7 +57,7 @@ class HowToStart extends StatelessWidget {
                   height: 150,
                   width: 250,
                   child: Card(
-                    color: Colors.grey,
+                    color: Colors.grey[900],
                     child: Padding(
                       padding: const EdgeInsets.only(
                           left: 20, top: 25, right: 20, bottom: 25),
@@ -67,12 +67,15 @@ class HowToStart extends StatelessWidget {
                         children: [
                           Text(start.title,
                               style: const TextStyle(
+                                  color:Colors.white,
                                   fontSize: 15,
                                   fontWeight: FontWeight.w700)),
                           const SizedBox(
                             height: 10,
                           ),
-                          Text(start.text)
+                          Text(start.text,style: const TextStyle(
+                              color:Colors.white
+                          )),
                         ],
                       ),
                     ),

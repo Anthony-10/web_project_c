@@ -7,6 +7,7 @@ import 'exercise_videos/homeworkout_videos.dart';
 import 'exercise_videos/streanghttraining_videos.dart';
 import 'featured_page.dart';
 import 'main_image.dart';
+import 'membership_page.dart';
 import 'offers_pages.dart';
 
 class HomePage extends StatelessWidget {
@@ -55,7 +56,11 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 5,
             ),
-            const BurnCaloriesVideos()
+            const BurnCaloriesVideos(),
+            const SizedBox(
+              height: 60,
+            ),
+            const MembershipPage(),
           ],
         ),
       ),
