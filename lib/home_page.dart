@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
             const SizedBox(
               height: 20,
             ),
-            OffersPages(),
+           /* const OffersPages(),*/
             Container(
               padding: const EdgeInsets.only(left: 50),
               child: const Column(

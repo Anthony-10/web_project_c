@@ -55,7 +55,7 @@ class _MembershipPageState extends State<MembershipPage> {
               spacing: 20,
                 runSpacing: 20,
                 children: membership.map((start)=>SizedBox(
-                  width: 300,
+                  width: 350,
                   height: 400,
                   child: Card(
                     color: Colors.grey[900],
@@ -65,6 +65,7 @@ class _MembershipPageState extends State<MembershipPage> {
                         crossAxisAlignment: CrossAxisAlignment.center,
                         children: [
                           Text(start.title,style: const TextStyle(color: Colors.white,fontSize: 30)),
+                          const SizedBox(height: 10,),
                           Text(start.text1,style: const TextStyle(color: Colors.white),),
                           const SizedBox(height: 10,),
                           Text(start.text2,style: const TextStyle(color: Colors.white))
