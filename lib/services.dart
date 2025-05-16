@@ -38,11 +38,14 @@ class _ServicesState extends State<Services> {
                     SizedBox(
                       height: 30,
                     ),
-                    Text("We believe fitness should be accessible to everyone, everywhere,\n"
-                        "regardless of income or access to the gym. With hundreds of\n"
-                        "professional workouts, healthy recipes and infomative articles, as\n"
-                        "well as one of the most positive communities on the web, you'll have\n"
-                        "everything you need to reach your personal fitness goals-for free!")
+                    SizedBox(
+                      width: 350,
+                      child: Text("We believe fitness should be accessible to everyone, everywhere,\n"
+                          "regardless of income or access to the gym. With hundreds of\n"
+                          "professional workouts, healthy recipes and infomative articles, as\n"
+                          "well as one of the most positive communities on the web, you'll have\n"
+                          "everything you need to reach your personal fitness goals-for free!"),
+                    )
                   ],
                 ),
               ),

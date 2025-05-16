@@ -43,7 +43,7 @@ class _MembershipPageState extends State<MembershipPage> {
   @override
   Widget build(BuildContext context) {
     return  Padding(
-      padding: const EdgeInsets.only(left: 30,right: 30),
+      padding: const EdgeInsets.only(left: 30,right: 30, bottom: 60),
       child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
@@ -54,23 +54,19 @@ class _MembershipPageState extends State<MembershipPage> {
             Wrap(
               spacing: 20,
                 runSpacing: 20,
-                children: membership.map((start)=>SizedBox(
-                  width: 350,
-                  height: 400,
-                  child: Card(
-                    color: Colors.grey[900],
-                    child: Padding(
-                      padding: const EdgeInsets.all(20),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.center,
-                        children: [
-                          Text(start.title,style: const TextStyle(color: Colors.white,fontSize: 30)),
-                          const SizedBox(height: 10,),
-                          Text(start.text1,style: const TextStyle(color: Colors.white),),
-                          const SizedBox(height: 10,),
-                          Text(start.text2,style: const TextStyle(color: Colors.white))
-                        ],
-                      ),
+                children: membership.map((start)=>Card(
+                  color: Colors.grey[900],
+                  child: Padding(
+                    padding: const EdgeInsets.all(20),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        Text(start.title,style: const TextStyle(color: Colors.white,fontSize: 30)),
+                        const SizedBox(height: 10,),
+                        Text(start.text1,style: const TextStyle(color: Colors.white),),
+                        const SizedBox(height: 10,),
+                        Text(start.text2,style: const TextStyle(color: Colors.white))
+                      ],
                     ),
                   ),
                 )).toList()
