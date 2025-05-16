@@ -21,11 +21,11 @@ class _ServicesState extends State<Services> {
       width: double.infinity,
       child: Column(
         children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Wrap(
+            spacing: 100,
             children: [
               const Padding(
-                padding: EdgeInsets.only(top: 50, bottom: 50),
+                padding: EdgeInsets.only(top: 50, bottom: 50, left: 10, right: 10),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
@@ -38,14 +38,11 @@ class _ServicesState extends State<Services> {
                     SizedBox(
                       height: 30,
                     ),
-                    SizedBox(
-                      width: 350,
-                      child: Text("we believe fitness should be accessible to everyone, everywhere,\n"
-                          "regardless of income or access to the gym. With hundreds of\n"
-                          "professional workouts, healthy recipes and infomative articles, as\n"
-                          "well as one of the most positive communities on the web, you'll have\n"
-                          "everything you need to reach your personal fitness goals-for free!")
-                    )
+                    Text("We believe fitness should be accessible to everyone, everywhere,\n"
+                        "regardless of income or access to the gym. With hundreds of\n"
+                        "professional workouts, healthy recipes and infomative articles, as\n"
+                        "well as one of the most positive communities on the web, you'll have\n"
+                        "everything you need to reach your personal fitness goals-for free!")
                   ],
                 ),
               ),
@@ -63,8 +60,8 @@ class _ServicesState extends State<Services> {
           const SizedBox(
             height: 20,
           ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          Wrap(
+            spacing: 100,
             children: [
               if (Responsive.isDesktop(context))
                 Padding(

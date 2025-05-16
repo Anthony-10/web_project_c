@@ -53,10 +53,7 @@ class HowToStart extends StatelessWidget {
             runSpacing: 20,
             children: toStart
                 .map(
-                  (start) => SizedBox(
-                  height: 150,
-                  width: 250,
-                  child: Card(
+                  (start) => Card(
                     color: Colors.grey[900],
                     child: Padding(
                       padding: const EdgeInsets.only(
@@ -79,7 +76,7 @@ class HowToStart extends StatelessWidget {
                         ],
                       ),
                     ),
-                  )),
+                  ),
             )
                 .toList(),
           ),
