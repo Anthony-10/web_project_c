@@ -2,13 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:web_project_c/services.dart';
 import 'package:web_project_c/to_start.dart';
 
+import 'contact_us.dart';
 import 'exercise_videos/burncalories_videos.dart';
 import 'exercise_videos/homeworkout_videos.dart';
 import 'exercise_videos/streanghttraining_videos.dart';
 import 'featured_page.dart';
+import 'footers.dart';
 import 'main_image.dart';
 import 'membership_page.dart';
-import 'offers_pages.dart';
 
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
@@ -58,9 +59,15 @@ class HomePage extends StatelessWidget {
             ),
             const BurnCaloriesVideos(),
             const SizedBox(
-              height: 60,
+              height: 5,
             ),
             const MembershipPage(),
+            const SizedBox(
+              height: 5,
+            ),
+            ContactUs(),
+            const Footers(),
+
           ],
         ),
       ),
