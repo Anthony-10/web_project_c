@@ -17,7 +17,7 @@ class FeaturedPage extends StatelessWidget {
         children: [
           const Text(
             "AS FEATURED IN",
-            style: TextStyle(color: Colors.white),
+            style: TextStyle(color: Colors.white,fontSize: 20,fontWeight: FontWeight.bold),
           ),
           const SizedBox(height: 20,),
           SizedBox(

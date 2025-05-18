@@ -73,7 +73,41 @@ class _MainImageState extends State<MainImage> {
               ),
             ],
           )
-        : Image.asset('assets/images/mainImage.jpg',
-            width: double.infinity);
+        : Stack(
+          children: [
+                Image.asset('assets/images/mainImage.jpg',
+                width: double.infinity),
+            Container(
+                decoration: const BoxDecoration(
+                    gradient: LinearGradient(
+                        begin: Alignment.topLeft,
+                        end: Alignment.topRight,
+                        colors: [Colors.black87, Colors.black12])),
+                child: Padding(
+                  padding: const EdgeInsets.only(left: 50,top: 80),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      const Text("WORKOUT\n"
+                          "WITH ME",style: TextStyle(fontWeight: FontWeight.bold,fontSize: 25, color: Colors.white),),
+                      const SizedBox(height: 13),
+                      InkWell(
+                        onTap: (){},
+                        onHover: (val){
+                          setState(() {
+                            isHover = val;
+                          });
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(color: isHover ? Colors.transparent:Colors.lightGreen),
+                          padding: const EdgeInsets.all(10),
+                          child: const Text("Join Club Now!", style: TextStyle(color: Colors.white),),
+                        ),
+                      )
+                    ],
+                  ),
+                ))
+              ],
+        );
   }
 }
